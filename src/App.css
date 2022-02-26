@@ -27,6 +27,8 @@
   --pink: #FF385C;
 }
 
+/* Fixed Classes -------------- */
+
 .hide {
   display: none !important;
 }
@@ -35,6 +37,32 @@
 }
 .show-grid {
   display: grid !important;
+}
+
+.outline-grid{
+  border: 1px solid #7d7d7d3b;
+  border-radius: 40px;
+}
+
+.mid-link{
+  color: #fff;
+  display: flex;
+}
+
+.nav-fixed .mid-link{
+  color: #000;
+}
+
+.nav-fixed .mid-link:hover{
+  color: rgb(102, 102, 102);
+}
+
+.border-short-fixed{
+  background-color: #fff;
+}
+
+.nav-fixed .border-short-fixed{
+  background-color: #000;
 }
 
 .nav-fixed{
@@ -46,6 +74,10 @@
   left: 0;
   top: 0;
   z-index: 50;
+}
+
+.top-links-fixed{
+  margin-bottom: 0 !important;
 }
 
 .logo-fixed{
@@ -66,3 +98,6 @@
 .end-sign-fixed:hover{
   box-shadow: 0px 2px 2px 2px #7d7d7d42;
 }
+
+
+/* End Fixed Classes -------------- */

@@ -4,7 +4,6 @@ import {FaAirbnb, FaUserCircle} from 'react-icons/fa'
 import {FiGlobe} from 'react-icons/fi'
 import {IoIosMenu, IoIosSearch} from 'react-icons/io'
 import { Link } from 'react-router-dom'
-import {animateScroll as scroll} from "react-scroll"
 
 
 // Styles ----------------
@@ -34,7 +33,8 @@ const LogoGroup = styled(Link)`
     text-decoration: none;
 `
 const Logo = styled.span`
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top: 10px;
 `
 const LogoText = styled.span`
     vertical-align: middle;
@@ -42,21 +42,28 @@ const LogoText = styled.span`
     font-size: 1.3rem;
 `
 
+const TopLinksGroup = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%; 
+`
+
 // MidLinks ---------------------
 const MidLinks = styled.div`
     display: flex;
     flex-direction: row;
-    /* display: none; */
 `
 const MidLink = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 .7rem;
+    margin-top: 12px;
     font-size: 85%;
     color: #fff;
     text-decoration: none;
-    font-family: Circular-Light, sans-serif;
+    /* font-family: Circular-Light, sans-serif; */
     transition: all 0.3s ease;
     &:hover{
         color: #c0c0c0;
@@ -215,13 +222,16 @@ const BottomIcon = styled(Link)`
 const Navbar = () => {
     // Logic ----------------------
         const [visible, setVisible] = useState(false)
+        const [visibleLinks, setVisibleLink] = useState()
         const toggleVisible = () => {
             const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
             if (scrolled > 25){
                 setVisible(true)
+                setVisibleLink(true)
             } 
             else if (scrolled <= 25){
                 setVisible(false)
+                setVisibleLink(false)
             }
         };
 
@@ -229,6 +239,10 @@ const Navbar = () => {
             window.addEventListener('scroll', toggleVisible);
           
         }, [])
+
+        const handleReveal = () =>{
+            setVisibleLink(false)
+        }
         
     
     // End Logic ------------------
@@ -238,40 +252,42 @@ const Navbar = () => {
     return (
         <Nav className={visible ? 'nav-fixed' : null }>
             <NavContainer>
-                <TopLinks>
+                <TopLinks className={visibleLinks ? 'top-links-fixed' : null}>
                     <LogoGroup to='' className={visible ? 'logo-fixed' : null}>
                         <Logo><FaAirbnb /></Logo>
                         <LogoText>airbnb</LogoText>
                     </LogoGroup>
-                    <MidLinks className={visible ? 'hide' : 'show-flex'}>
-                        <MidLink to=''>
-                            Places to stay
-                            <BorderShort></BorderShort>
-                        </MidLink>
-                        <MidLink to=''>
-                            Experiences
-                            <BorderShort></BorderShort>
-                        </MidLink>
-                        <MidLink to=''>
-                            Online Experiences
-                            <BorderShort></BorderShort>
-                        </MidLink>
-                    </MidLinks>
-                    <MidLinksSub to='' className={visible ? 'show-flex' : 'hide'}>
-                        <MidSubText>Start your search</MidSubText>
-                        <MidSubIcon> <IoIosSearch /> </MidSubIcon>
-                    </MidLinksSub>
-                    <EndLinks>
-                        <EndLink to='' className={visible ? 'end-link-fixed' : null}>Become a Host</EndLink>
-                        <EndLink to='' className={visible ? 'end-link-fixed' : null}><FiGlobe /></EndLink>
-                        <EndSignGroup to='' className={visible ? 'end-sign-fixed' : null}>
-                            <EndSign><IoIosMenu /></EndSign>
-                            <EndSign><FaUserCircle /></EndSign>
-                        </EndSignGroup>
-                    </EndLinks>
+                    <TopLinksGroup>
+                        <MidLinks className={visibleLinks ? 'hide' : 'show-flex'}>
+                            <MidLink to='' className={visibleLinks ? null : 'mid-link'}>
+                                Places to stay
+                                <BorderShort className={visibleLinks ? null : 'border-short-fixed'}></BorderShort>
+                            </MidLink>
+                            <MidLink to='' className={visibleLinks ? null : 'mid-link'}>
+                                Experiences
+                                <BorderShort className={visibleLinks ? null : 'border-short-fixed'}></BorderShort>
+                            </MidLink>
+                            <MidLink to='' className={visibleLinks ? null : 'mid-link'}>
+                                Online Experiences
+                                <BorderShort className={visibleLinks ? null : 'border-short-fixed'}></BorderShort>
+                            </MidLink>
+                        </MidLinks>
+                        <MidLinksSub to='' className={visibleLinks ? 'show-flex' : 'hide'} onClick={handleReveal}>
+                            <MidSubText>Start your search</MidSubText>
+                            <MidSubIcon> <IoIosSearch /> </MidSubIcon>
+                        </MidLinksSub>
+                        <EndLinks>
+                            <EndLink to='' className={visible ? 'end-link-fixed' : null}>Become a Host</EndLink>
+                            <EndLink to='' className={visible ? 'end-link-fixed' : null}><FiGlobe /></EndLink>
+                            <EndSignGroup to='' className={visible ? 'end-sign-fixed' : null}>
+                                <EndSign><IoIosMenu /></EndSign>
+                                <EndSign><FaUserCircle /></EndSign>
+                            </EndSignGroup>
+                        </EndLinks>
+                    </TopLinksGroup>
                 </TopLinks>
-                <BottomLinks>
-                    <BottomGroup className={visible ? 'hide' : 'show-grid'}>
+                <BottomLinks className={visibleLinks ? 'hide' : 'outline-grid'}>
+                    <BottomGroup className={visibleLinks ? 'hide' : 'show-grid'}>
                         <BottomContent to=''>
                             <BcontentTitle>Location</BcontentTitle>
                             <BcontentDesc>Where are you going?</BcontentDesc>
