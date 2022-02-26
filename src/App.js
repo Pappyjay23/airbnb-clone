@@ -1,16 +1,13 @@
 import React from 'react'
 import {BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection'
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
-        <HeroSection />
-        <HeroSection />
+        <Home />
       </Router>
     </>
   )

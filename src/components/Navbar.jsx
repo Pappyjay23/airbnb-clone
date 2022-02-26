@@ -60,10 +60,10 @@ const MidLink = styled(Link)`
     align-items: center;
     margin: 0 .7rem;
     margin-top: 12px;
-    font-size: 85%;
+    font-size: 100%;
     color: #fff;
     text-decoration: none;
-    /* font-family: Circular-Light, sans-serif; */
+    font-family: Circular-Light, sans-serif;
     transition: all 0.3s ease;
     &:hover{
         color: #c0c0c0;
