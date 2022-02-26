@@ -10,6 +10,7 @@ const App = () => {
       <Router>
         <Navbar />
         <HeroSection />
+        <HeroSection />
       </Router>
     </>
   )
