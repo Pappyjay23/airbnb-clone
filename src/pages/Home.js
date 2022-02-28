@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection"
 import Experiences from '../components/Experiences'
 import GiftCards from '../components/GiftCards'
 import Inspiration from '../components/Inspiration'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Experiences />
         <GiftCards />
         <Inspiration />
+        <Footer />
     </>
   )
 }
