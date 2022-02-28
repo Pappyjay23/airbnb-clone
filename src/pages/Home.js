@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "../components/Navbar"
 import HeroSection from "../components/HeroSection"
 import Experiences from '../components/Experiences'
+import GiftCards from '../components/GiftCards'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <Navbar />
         <HeroSection />
         <Experiences />
+        <GiftCards />
     </>
   )
 }

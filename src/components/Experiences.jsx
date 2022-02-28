@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
 
+
+// Styles
 const Experience = styled.div`
     background-color: #fff;
 `
@@ -10,6 +12,7 @@ const ExperienceContainer = styled.div`
 `
 const ExperienceHeader = styled.div`
     font-size: 2.3rem;
+    letter-spacing: -1px;
     margin-bottom: 2rem;
 `
 const ExperienceGrid = styled.div`
@@ -36,8 +39,9 @@ const EgridTwo = styled.div`
     border-radius: 10px;
 `
 const GridText = styled.div`
-    font-size: 2.5rem;
-    font-family: Circular-Bold, sans-serif;
+    font-size: 2.7rem;
+    letter-spacing: -2px;
+    /* font-family: Circular-Bold, sans-serif; */
     width: 50%;
     margin-bottom: 2rem;
 `
