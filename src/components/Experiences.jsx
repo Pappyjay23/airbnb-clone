@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
+import GridOneImg from '../images/trip-bgd.jpg'
+import GridTwoImg from '../images/home-bgd.jpg'
 
 
 // Styles
@@ -21,7 +23,7 @@ const ExperienceGrid = styled.div`
     column-gap: 3rem;
 `
 const EgridOne = styled.div`
-    background-image: url('images/trip-bgd.jpg');
+    background-image: url(${GridOneImg});
     background-position: center;
     background-size: cover;
     color: #fff;
@@ -30,7 +32,7 @@ const EgridOne = styled.div`
     border-radius: 10px;
 `
 const EgridTwo = styled.div`
-    background-image: url('images/home-bgd.jpg');
+    background-image: url(${GridTwoImg});
     background-position: center;
     background-size: cover;
     color: #fff;

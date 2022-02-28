@@ -94,8 +94,14 @@ const MidLinksSub = styled(Link)`
     border-radius: 40px;
     font-size: 90%;
     text-decoration: none;
-    box-shadow: 1px 1px 6px 1px #c2c2c2;
+    box-shadow: 0px 1px 2px #c2c2c27b;
+    border: 1px solid #c2c2c27b;
     display: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0px 3px 3px #c2c2c27b;
+    }
 `
 const MidSubText = styled.p`
     padding-left: 1rem;

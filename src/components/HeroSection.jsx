@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import HeroBgd from '../images/hero-bgd.jpg'
 
 // Styles
 const Hero = styled.div`
@@ -11,7 +12,7 @@ const HeroContainer = styled.div`
     padding: 1rem 5rem;
 `
 const HeroCard = styled.div`
-    background-image: url('images/hero-bgd.jpg');
+    background-image: url(${HeroBgd});
     background-position: center;
     background-size: cover;
     border-radius: 10px;
