@@ -11,10 +11,10 @@ const Home = () => {
     <>
         <Navbar />
         <HeroSection />
-        <Experiences />
-        <GiftCards />
-        <Inspiration />
-        <Footer />
+        {/* <Experiences /> */}
+        {/* <GiftCards /> */}
+        {/* <Inspiration /> */}
+        {/* <Footer /> */}
     </>
   )
 }

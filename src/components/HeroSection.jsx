@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import HeroBgd from '../images/hero-bgd.jpg'
+import { devices } from '../data/Queries'
 
 // Styles
 const Hero = styled.div`
@@ -10,6 +11,12 @@ const Hero = styled.div`
 `
 const HeroContainer = styled.div`
     padding: 1rem 5rem;
+    @media ${devices.tablet} {
+        padding: 1rem 3rem;
+    }
+    @media ${devices.mobileL} {
+        padding: 1rem 1.5rem;
+    }
 `
 const HeroCard = styled.div`
     background-image: url(${HeroBgd});
@@ -23,16 +30,22 @@ const HeroCard = styled.div`
 const HeroContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     position: absolute;
     bottom: 100px;
+    padding: 0 .5rem;
     width: 100%;
+    margin: 0 auto;
 `
 const HeroText = styled.div`
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-align: center;
+    @media ${devices.tablet} {
+        font-size: 2rem;
+    }
 `
 const HeroButton = styled(Link)`
     padding: 1rem 2rem;

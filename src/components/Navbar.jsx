@@ -20,6 +20,9 @@ const NavContainer = styled.div`
     @media ${devices.laptop}  {
         padding: 1rem 2rem;
     }
+    @media ${devices.mobileL} {
+        padding: 1rem;
+    }
 `
 // Top Links -------------
 const TopLinks = styled.div`
@@ -127,6 +130,10 @@ const MidLinksSub = styled(Link)`
     &:hover {
         box-shadow: 0px 3px 3px #c2c2c27b;
     }
+
+    @media ${devices.tablet} {
+        font-size: 80%;
+    }
 `
 const MidSubText = styled.p`
     padding-left: 1rem;
@@ -203,6 +210,10 @@ const MobileBarGroup = styled.div`
     display: none;
     @media (max-width: 650px) {
         display: block;
+    }
+    @media ${devices.mobileL} {
+        width: 90%;
+        padding: .7rem 1rem;
     }
     
 `
