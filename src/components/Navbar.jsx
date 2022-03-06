@@ -4,6 +4,7 @@ import {FaAirbnb, FaUserCircle} from 'react-icons/fa'
 import {FiGlobe} from 'react-icons/fi'
 import {IoIosMenu, IoIosSearch} from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { devices } from '../data/Queries'
 
 
 // Styles ----------------
@@ -16,6 +17,9 @@ const Nav = styled.nav`
 `
 const NavContainer = styled.div`
     padding: 1rem 4rem;
+    @media ${devices.laptop}  {
+        padding: 1rem 2rem;
+    }
 `
 // Top Links -------------
 const TopLinks = styled.div`
@@ -24,6 +28,9 @@ const TopLinks = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    @media ${devices.mobileL} {
+        display: none !important;
+    }
 `
 const LogoGroup = styled(Link)`
     display: flex;
@@ -40,6 +47,9 @@ const LogoText = styled.span`
     vertical-align: middle;
     font-weight: 600;
     font-size: 1.3rem;
+    @media ${devices.tablet} {
+        display: none;
+    }
 `
 
 const TopLinksGroup = styled.div`
@@ -47,6 +57,12 @@ const TopLinksGroup = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 65%; 
+    @media ${devices.laptop}  {
+        width: 70%; 
+    }
+    @media ${devices.tablet} {
+        width: 85%;
+    }
 `
 
 // MidLinks ---------------------
@@ -67,6 +83,12 @@ const MidLink = styled(Link)`
     transition: all 0.3s ease;
     &:hover{
         color: #c0c0c0;
+    }
+    @media ${devices.laptop} {
+        font-size: 90%;
+    }
+    @media ${devices.tablet} {
+        font-size: 80%;
     }
 `
 
@@ -143,6 +165,13 @@ const EndLink = styled(Link)`
     &:nth-child(2){
         margin-right: 1rem;
     }
+
+    @media ${devices.laptop} {
+        font-size: 80%;
+    }
+    @media ${devices.tablet} {
+        font-size: 75%;
+    }
 `
 const EndSignGroup = styled(Link)`
     display: flex;
@@ -165,6 +194,9 @@ const EndSign = styled.div`
 const BottomLinks = styled.div`
     width: 80%;
     margin: 0 auto;
+    @media ${devices.tablet} {
+        width: 90%;
+    }
 `
 const BottomGroup = styled.div`
     display: grid;
