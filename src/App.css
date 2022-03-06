@@ -102,3 +102,12 @@
 
 
 /* End Fixed Classes -------------- */
+
+.mobile-search {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-fixed .mobile-bar{
+  background-color: rgba(241, 241, 241, 0.788);
+}

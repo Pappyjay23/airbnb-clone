@@ -21,6 +21,7 @@ const TopLinks = styled.div`
     border-bottom: 1px solid #DDDDDD;
     position: relative;
     margin-bottom: 2rem;
+    overflow-x: scroll;
 `
 const TopLink = styled(Link)`
     text-decoration: none;

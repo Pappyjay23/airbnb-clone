@@ -28,8 +28,8 @@ const TopLinks = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    @media ${devices.mobileL} {
-        display: none !important;
+    @media (max-width: 650px) {
+        display: none ;
     }
 `
 const LogoGroup = styled(Link)`
@@ -38,6 +38,9 @@ const LogoGroup = styled(Link)`
     align-items: center;
     color: #fff;
     text-decoration: none;
+    @media ${devices.mobileL} {
+        display: none !important;
+    }
 `
 const Logo = styled.span`
     font-size: 2rem;
@@ -190,12 +193,43 @@ const EndSign = styled.div`
     }
 `
 
+// Mobile Bar
+const MobileBarGroup = styled.div`
+    background-color: #fff;
+    margin: .5rem auto;
+    padding: 1rem;
+    border-radius: 50px;
+    width: 80%;
+    display: none;
+    @media (max-width: 650px) {
+        display: block;
+    }
+    
+`
+const MobileBar = styled(Link)`
+    color: #FF385C;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+`
+
+const MobileBarText = styled.p`
+    color: #000;
+    margin-left: .5rem;
+    font-size: 90%;
+`
+
 // Bottom Links --------------------
 const BottomLinks = styled.div`
     width: 80%;
     margin: 0 auto;
     @media ${devices.tablet} {
         width: 90%;
+    }
+    @media (max-width: 650px) {
+        display: none;
     }
 `
 const BottomGroup = styled.div`
@@ -324,6 +358,12 @@ const Navbar = () => {
                         </EndLinks>
                     </TopLinksGroup>
                 </TopLinks>
+                <MobileBarGroup className='mobile-bar'>
+                    <MobileBar to=''>
+                     <IoIosSearch className='mobile-search'  /> 
+                     <MobileBarText>Where are you going?</MobileBarText>
+                    </MobileBar>
+                </MobileBarGroup>
                 <BottomLinks className={visibleLinks ? 'hide' : 'outline-grid'}>
                     <BottomGroup className={visibleLinks ? 'hide' : 'show-grid'}>
                         <BottomContent to=''>
