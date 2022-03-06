@@ -203,7 +203,7 @@ const EndSign = styled.div`
 // Mobile Bar
 const MobileBarGroup = styled.div`
     background-color: #fff;
-    margin: .5rem auto;
+    margin: 0 auto;
     padding: 1rem;
     border-radius: 50px;
     width: 80%;
@@ -212,8 +212,8 @@ const MobileBarGroup = styled.div`
         display: block;
     }
     @media ${devices.mobileL} {
-        width: 90%;
-        padding: .7rem 1rem;
+        width: 100%;
+        padding: .7rem;
     }
     
 `

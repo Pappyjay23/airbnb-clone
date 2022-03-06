@@ -11,7 +11,7 @@ const Home = () => {
     <>
         <Navbar />
         <HeroSection />
-        {/* <Experiences /> */}
+        <Experiences />
         {/* <GiftCards /> */}
         {/* <Inspiration /> */}
         {/* <Footer /> */}
