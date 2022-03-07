@@ -15,6 +15,9 @@ const ExperienceContainer = styled.div`
     @media ${devices.tablet} {
         padding: 2rem;
     }
+    @media ${devices.mobileL} {
+        padding: 2rem 1.3rem;
+    }
 `
 const ExperienceHeader = styled.div`
     font-size: 2.1rem;
