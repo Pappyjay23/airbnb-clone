@@ -12,7 +12,7 @@ const GiftCard = styled.div`
   padding: 2rem 0 2rem 3rem;
   position: relative;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   @media (max-width: 660px){
     display: flex;
     flex-direction: column;
@@ -57,8 +57,10 @@ const GiftCardButton = styled(Link)`
 `
 const GiftCardImage = styled.img`
   width: 65%;
-  position: absolute;
-  right: -40px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: -80px;
   @media (max-width: 660px){
     width: 200%;
     position: relative;

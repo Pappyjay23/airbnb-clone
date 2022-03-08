@@ -12,16 +12,24 @@ const InspirationHeader = styled.p`
     font-size: 1.5rem;
     margin-bottom: 2rem;
 `
+
+const TopLinksBox = styled.div`
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+`
+
 const TopLinks = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 120%;
     border-bottom: 1px solid #DDDDDD;
     position: relative;
     margin-bottom: 2rem;
-    overflow-x: scroll;
 `
 const TopLink = styled(Link)`
     text-decoration: none;
@@ -29,6 +37,7 @@ const TopLink = styled(Link)`
     font-size: 90%;
     border-radius: 7px;
     padding: .7rem;
+    /* margin: 0 .7rem; */
     transition: all 0.3s ease;
 
     &:hover {
@@ -136,16 +145,19 @@ const Inspiration = () => {
   return (
    <InspirationContainer>
        <InspirationHeader>Inspiration for future getaways</InspirationHeader>
-       <TopLinks>
-        {/* {TopLinksData.map((el) => ( */}
-            <TopLink to='' onClick={first}>Destination for arts & culture</TopLink>
-            <TopLink to='' onClick={second}>Destination for outdoor adventure</TopLink>
-            <TopLink to='' onClick={third}>Mountain cabins</TopLink>
-            <TopLink to='' onClick={fourth}>Beach destinations</TopLink>
-            <TopLink to='' onClick={fifth}>Popular destinations</TopLink>
-            <TopLink to='' onClick={sixth}>Unique Stays</TopLink>
-        {/* ))} */}
-       </TopLinks>
+       <TopLinksBox>
+        <TopLinks>
+            {/* {TopLinksData.map((el) => ( */}
+                <TopLink to='' onClick={first}>Destination for arts & culture</TopLink>
+                <TopLink to='' onClick={second}>Destination for outdoor adventure</TopLink>
+                <TopLink to='' onClick={third}>Mountain cabins</TopLink>
+                <TopLink to='' onClick={fourth}>Beach destinations</TopLink>
+                <TopLink to='' onClick={fifth}>Popular destinations</TopLink>
+                <TopLink to='' onClick={sixth}>Unique Stays</TopLink>
+            {/* ))} */}
+        </TopLinks>
+       </TopLinksBox>
+
        <CountryLinks className={firstPage ? 'show-grid' : 'hide'}>
             {CLinksOne.map((clink) =>(
                 <CountryLink to=''>
