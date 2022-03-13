@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 // import { TopLinksData } from '../data/TopLinksData'
 import { CLinksFive, CLinksFour, CLinksOne, CLinksSix, CLinksThree, CLinksTwo } from '../data/CountryLinks'
+import { devices } from '../data/Queries'
 
 // Styles
 const InspirationContainer = styled.div`
     padding: 3rem;
+    @media ${devices.tablet} {
+        padding: 3rem 1.3rem;
+    }
 `
 const InspirationHeader = styled.p`
     font-size: 1.5rem;
@@ -26,12 +30,13 @@ const TopLinks = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 120%;
     border-bottom: 1px solid #DDDDDD;
     position: relative;
     margin-bottom: 2rem;
+    width: 120%;
 `
 const TopLink = styled(Link)`
+    white-space: nowrap;
     text-decoration: none;
     color: #717171;
     font-size: 90%;
@@ -159,8 +164,8 @@ const Inspiration = () => {
        </TopLinksBox>
 
        <CountryLinks className={firstPage ? 'show-grid' : 'hide'}>
-            {CLinksOne.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksOne.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
@@ -168,8 +173,8 @@ const Inspiration = () => {
             <MoreLink to=''>Show more</MoreLink>
        </CountryLinks>
        <CountryLinks className={secondPage ? 'show-grid' : 'hide'}>
-            {CLinksTwo.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksTwo.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
@@ -177,8 +182,8 @@ const Inspiration = () => {
             <MoreLink to=''>Show more</MoreLink>
        </CountryLinks>
        <CountryLinks className={thirdPage ? 'show-grid' : 'hide'}>
-            {CLinksThree.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksThree.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
@@ -186,8 +191,8 @@ const Inspiration = () => {
             <MoreLink to=''>Show more</MoreLink>
        </CountryLinks>
        <CountryLinks className={fourthPage ? 'show-grid' : 'hide'}>
-            {CLinksFour.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksFour.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
@@ -195,8 +200,8 @@ const Inspiration = () => {
             <MoreLink to=''>Show more</MoreLink>
        </CountryLinks>
        <CountryLinks className={fifthPage ? 'show-grid' : 'hide'}>
-            {CLinksFive.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksFive.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
@@ -204,8 +209,8 @@ const Inspiration = () => {
             <MoreLink to=''>Show more</MoreLink>
        </CountryLinks>
        <CountryLinks className={sixthPage ? 'show-grid' : 'hide'}>
-            {CLinksSix.map((clink) =>(
-                <CountryLink to=''>
+            {CLinksSix.map((clink, index) =>(
+                <CountryLink to='' key={index}>
                     <City>{clink.city}</City>
                     <State>{clink.state}</State>
                 </CountryLink>
