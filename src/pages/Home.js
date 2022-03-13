@@ -14,7 +14,7 @@ const Home = () => {
         <Experiences />
         <GiftCards />
         <Inspiration />
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }
